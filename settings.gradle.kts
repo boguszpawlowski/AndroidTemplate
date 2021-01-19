@@ -1,3 +1,3 @@
 plugins {
-    id("com.pablisco.gradle.automodule") version "0.14"
+  id("com.pablisco.gradle.automodule") version "0.14"
 }
