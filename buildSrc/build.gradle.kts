@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-  implementation("com.android.tools.build:gradle:7.0.0-alpha03")
+  implementation("com.android.tools.build:gradle:7.0.0-alpha04")
 }
 
 kotlinDslPluginOptions {

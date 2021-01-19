@@ -1,7 +1,6 @@
 import com.android.build.gradle.BaseExtension
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import io.gitlab.arturbosch.detekt.Detekt
-import org.gradle.api.JavaVersion.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -68,6 +67,7 @@ tasks.withType<Detekt> {
   config.setFrom(rootProject.file("detekt-config.yml"))
   setSource(files(projectDir))
   exclude(subprojects.map { "${it.buildDir.relativeTo(rootDir).path}/" })
+  exclude("**/.gradle/**")
   reports {
     xml {
       enabled = true
