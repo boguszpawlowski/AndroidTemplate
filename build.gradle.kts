@@ -29,7 +29,7 @@ allprojects {
     jcenter()
   }
 
-  tasks.withType<Test>() {
+  tasks.withType<Test> {
     useJUnitPlatform()
   }
 
@@ -44,15 +44,8 @@ allprojects {
       freeCompilerArgs = listOf(
         "-progressive",
         "-Xopt-in=kotlin.RequiresOptIn",
-        "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
-        "-Xallow-jvm-ir-dependencies" // TODO remove if you don't want to use Compose
+        "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
       )
-    }
-  }
-
-  plugins.withType<BasePlugin> {
-    extensions.findByType<BaseExtension>()?.apply {
-      setSdkVersions()
     }
   }
 }

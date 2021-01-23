@@ -1,17 +1,10 @@
 plugins {
   id(Android.ApplicationPluginId)
   kotlin(Kotlin.AndroidPluginId)
-}
-android {
-  setSdkVersions()
-  defaultConfig {
-    versionCode = App.VersionCode
-    versionName = App.VersionName
-  }
+  id("common-android-plugin")
 }
 
 dependencies {
-  coreLibraryDesugaring(Kotlin.DesugarJdkLibs)
   implementation(Kotlin.StdLibJdk7)
 
   implementation(Material.Core)
