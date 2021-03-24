@@ -21,10 +21,10 @@ jobs:
           key: cache-gradle-${{ hashFiles('**/*.gradle', '**/gradle-wrapper.properties') }}
           restore-keys: cache-gradle-
 
-      - name: Setup Java 11
+      - name: Setup Java 14
         uses: actions/setup-java@v1
         with:
-          java-version: '11'
+          java-version: '14'
 
       - name: Run Detekt
         run: ./gradlew detekt --stacktrace
@@ -47,15 +47,13 @@ jobs:
           key: cache-gradle-${{ hashFiles('**/*.gradle', '**/gradle-wrapper.properties') }}
           restore-keys: cache-gradle-
 
-      - name: Setup Java 11
+      - name: Setup Java 14
         uses: actions/setup-java@v1
         with:
-          java-version: '11'
+          java-version: '14'
 
       - name: Run Debug Unit Tests
         run: ./gradlew test --stacktrace
 
       - name: Stop Gradle
         run: ./gradlew --stop
-
-

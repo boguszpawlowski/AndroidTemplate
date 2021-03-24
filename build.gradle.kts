@@ -5,11 +5,13 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
   id(DetektLib.PluginId) version DetektLib.Version
   id(GradleVersions.PluginId) version GradleVersions.Version
+  id(GrGit.PluginId) version GrGit.Version
 }
 
 buildscript {
   repositories {
     google()
+    mavenCentral()
     gradlePluginPortal()
     jcenter()
   }
@@ -25,11 +27,8 @@ allprojects {
   repositories {
     mavenCentral()
     google()
+    maven("https://jitpack.io")
     jcenter()
-  }
-
-  tasks.withType<Test> {
-    useJUnitPlatform()
   }
 
   tasks.withType<JavaCompile> {
@@ -40,11 +39,23 @@ allprojects {
   tasks.withType<KotlinCompile> {
     kotlinOptions {
       jvmTarget = "1.8"
-      freeCompilerArgs = listOf(
+      languageVersion = "1.5"
+      apiVersion = "1.5"
+      freeCompilerArgs = freeCompilerArgs + listOf(
         "-progressive",
         "-Xopt-in=kotlin.RequiresOptIn",
-        "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+        "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+        "-Xskip-prerelease-check",
+        "-Xuse-experimental=kotlin.contracts.ExperimentalContracts",
+        "-Xjvm-enable-preview"
       )
+    }
+  }
+
+  tasks.withType<Test> {
+    useJUnitPlatform()
+    testLogging {
+      events("passed", "skipped", "failed")
     }
   }
 }

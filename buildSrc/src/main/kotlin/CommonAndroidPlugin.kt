@@ -2,7 +2,6 @@ import com.android.build.gradle.BaseExtension
 import org.gradle.api.JavaVersion.VERSION_1_8
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class CommonAndroidPlugin : Plugin<Project> {
 
@@ -17,7 +16,7 @@ class CommonAndroidPlugin : Plugin<Project> {
         minSdkVersion(AndroidSdk.Min)
         targetSdkVersion(AndroidSdk.Target)
         versionName = App.VersionName
-        versionCode = App.VersionCode
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
       }
 
       compileOptions {
@@ -26,18 +25,12 @@ class CommonAndroidPlugin : Plugin<Project> {
         isCoreLibraryDesugaringEnabled = true
       }
 
-      testOptions {
-        unitTests.all {
-          it.useJUnitPlatform()
-        }
+      buildFeatures.compose = true // FIXME remove if not using compose
+
+      composeOptions { // FIXME remove if not using compose
+        kotlinCompilerExtensionVersion = Compose.Version
       }
 
-      target.tasks.withType(KotlinCompile::class.java).configureEach {
-        kotlinOptions {
-          jvmTarget = "1.8"
-          freeCompilerArgs = freeCompilerArgs + "-Xallow-jvm-ir-dependencies"
-        }
-      }
       target.dependencies.add("coreLibraryDesugaring", Kotlin.DesugarJdkLibs)
     }
   }
