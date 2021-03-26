@@ -15,7 +15,6 @@ class CommonAndroidPlugin : Plugin<Project> {
       defaultConfig {
         minSdkVersion(AndroidSdk.Min)
         targetSdkVersion(AndroidSdk.Target)
-        versionName = App.VersionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
       }
 

@@ -11,6 +11,7 @@ val commitsCount = Grgit.open(mapOf("dir" to rootDir)).log().size
 android {
   defaultConfig {
     versionCode = commitsCount
+    versionName = App.VersionName
   }
 }
 
@@ -19,7 +20,7 @@ dependencies {
 
   implementation(Material.Core)
 
-  implementation(Compose.Runtime)
+  implementation(Compose.Runtime) // FIXME remove if not using compose
 
   implementation(AndroidX.AppCompat)
   implementation(AndroidX.ConstraintLayout)
