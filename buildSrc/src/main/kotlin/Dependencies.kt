@@ -111,13 +111,6 @@ object DetektLib {
   const val Cli = "io.gitlab.arturbosch.detekt:detekt-cli:$Version"
 }
 
-object Moshi {
-  const val Version = "1.11.0"
-
-  const val Core = "com.squareup.moshi:moshi:$Version"
-  const val CodeGen = "com.squareup.moshi:moshi-kotlin-codegen:$Version"
-}
-
 object Koin {
   const val Version = "2.2.2"
 
