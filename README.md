@@ -53,6 +53,15 @@ Project has basic Github Actions CI setup created. It will run unit tests and li
 Template is ready for starting the development using Jetpack Compose. \
 In case this is not needed, remove the lines marked by `// FIXME remove if not using compose` comments.
 
+## Working on a stable version of Android Studio
+As this template is aimed at development using latest tools and Jetpack Compose, it is not compatible
+with stable version of AS. If you want to work on it, please remove Compose support as described in the
+previous paragraph and revert Android Gradle Plugin to latest stable version (in this moments it is 4.1.1):
+ - Change AGP version in `Dependencies.kt`.
+ - Change AGP version in `build.gradle.kts` of `buildSrc` directory.
+ - Run `gradle wrapper` task.
+ - Sync and rebuild the project. 
+
 ## License
 
     Copyright 2021 Bogusz Pawłowski
