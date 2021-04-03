@@ -20,10 +20,16 @@ dependencies {
 
   implementation(Material.Core)
 
-  implementation(Compose.Runtime) // FIXME remove if not using compose
-
   implementation(AndroidX.AppCompat)
   implementation(AndroidX.ConstraintLayout)
+  implementation(AndroidX.ComposeActivity)
 
+  implementation(Compose.Runtime) // FIXME remove if not using compose
+  implementation(Compose.Ui) // FIXME remove if not using compose
+  implementation(Compose.Foundation) // FIXME remove if not using compose
+  implementation(Compose.FoundationLayout) // FIXME remove if not using compose
+  implementation(Compose.Material) // FIXME remove if not using compose
+
+  debugImplementation(Debug.LeakCanary)
   debugImplementation(Debug.FoQA)
 }

@@ -20,6 +20,7 @@ buildscript {
     classpath(Kotlin.GradlePlugin)
     classpath(DetektLib.Plugin)
     classpath(GradleVersions.Plugin)
+    classpath(Firebase.CrashlyticsPlugin)
   }
 }
 
