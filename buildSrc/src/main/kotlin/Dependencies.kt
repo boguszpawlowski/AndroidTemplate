@@ -41,7 +41,7 @@ object Kotlin {
 }
 
 object Android {
-  const val GradlePlugin = "com.android.tools.build:gradle:7.0.0-alpha10"
+  const val GradlePlugin = "com.android.tools.build:gradle:7.0.0-alpha12"
 
   const val ApplicationPluginId = "com.android.application"
   const val LibraryPluginId = "com.android.library"
@@ -79,22 +79,31 @@ object SqlDelight {
   const val CoroutineExtensions = "com.squareup.sqldelight:coroutines-extensions:$Version"
 }
 
+object Retrofit {
+  const val Version = "2.9.0"
+
+  const val Core = "com.squareup.retrofit2:retrofit:$Version"
+  const val ConverterKotlinxSerialization = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0"
+}
+
+object KotlinXSerialization {
+  const val Core = "org.jetbrains.kotlinx:kotlinx-serialization-core:1.1.0"
+  const val Json = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0"
+}
+
 object AndroidX {
   const val Version = "1.0.0"
-  const val LifecycleVersion = "2.3.0"
+  const val LifecycleVersion = "2.2.0"
 
-  const val AppCompat = "androidx.appcompat:appcompat:1.3.0-beta01"
+  const val AppCompat = "androidx.appcompat:appcompat:1.3.0-rc01"
   const val Activity = "androidx.activity:activity-ktx:1.1.0"
   const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:2.0.4"
-  const val ComposeActivity = "androidx.activity:activity-compose:1.3.0-alpha04"
-  const val lifecycle = "androidx.lifecycle:lifecycle-extensions:$LifecycleVersion"
-  const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:$LifecycleVersion"
+  const val ComposeActivity = "androidx.activity:activity-compose:1.3.0-alpha05"
+  const val Lifecycle = "androidx.lifecycle:lifecycle-extensions:$LifecycleVersion"
+  const val LifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:$LifecycleVersion"
   const val LifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$LifecycleVersion"
   const val Startup = "androidx.startup:startup-runtime:1.0.0"
   const val ComposeLifecycle = "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha03"
-
-  const val TestRunner = "androidx.test:runner:1.3.0"
-  const val TestRules = "androidx.test:rules:1.3.0"
 }
 
 object Material {
@@ -126,7 +135,7 @@ object Timber {
 }
 
 object Compose {
-  const val Version = "1.0.0-beta02"
+  const val Version = "1.0.0-beta03"
   const val AccompanistVersion = "0.6.2"
 
   const val Runtime = "androidx.compose.runtime:runtime:$Version"
@@ -137,14 +146,14 @@ object Compose {
   const val Ui = "androidx.compose.ui:ui:$Version"
   const val UiTooling = "androidx.compose.ui:ui-tooling:$Version"
   const val MaterialIconsExtended = "androidx.compose.material:material-icons-extended:$Version"
-  const val CoilImage = "dev.chrisbanes.accompanist:accompanist-coil:$AccompanistVersion"
+  const val AccompanistCoil = "dev.chrisbanes.accompanist:accompanist-coil:$AccompanistVersion"
   const val Navigation = "androidx.navigation:navigation-compose:1.0.0-alpha09"
   const val Testing = "androidx.compose.ui:ui-test:$Version"
   const val JunitTesting = "androidx.compose.ui:ui-test-junit4:$Version"
 }
 
 object Firebase {
-  const val CrashlyticsPlugin = "com.google.firebase:firebase-crashlytics-gradle:2.5.1"
+  const val CrashlyticsPlugin = "com.google.firebase:firebase-crashlytics-gradle:2.5.2"
   const val GoogleServicesPlugin = "com.google.gms:google-services:4.3.5"
   const val AppDistributionPlugin = "com.google.firebase:firebase-appdistribution-gradle:1.3.1"
 
@@ -152,14 +161,14 @@ object Firebase {
   const val GoogleServicesPluginId = "com.google.gms.google-services"
   const val AppDistributionPluginId = "com.google.firebase.appdistribution"
 
-  const val Bom = "com.google.firebase:firebase-bom:26.7.0"
+  const val Bom = "com.google.firebase:firebase-bom:26.8.0"
 
   const val Analytics = "com.google.firebase:firebase-analytics-ktx"
   const val Crashlytics = "com.google.firebase:firebase-crashlytics-ktx"
 }
 
 object Debug {
-  const val LeakCanary = "com.squareup.leakcanary:leakcanary-android:2.4"
+  const val LeakCanary = "com.squareup.leakcanary:leakcanary-android:2.7"
   const val FoQA = "pl.droidsonroids.foqa:foqa:0.1.24"
 }
 
@@ -173,4 +182,13 @@ object Kotest {
 
 object CoroutineTest {
   const val Turbine = "app.cash.turbine:turbine:0.4.1"
+}
+
+object AndroidXTest {
+  const val Runner = "androidx.test:runner:1.3.0"
+  const val Rules = "androidx.test:rules:1.3.0"
+}
+
+object ComposeTest {
+  const val Core = "androidx.compose.ui:ui-test-junit4:${Compose.Version}"
 }
