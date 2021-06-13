@@ -18,6 +18,7 @@ buildscript {
   dependencies {
     classpath(Android.GradlePlugin)
     classpath(Kotlin.GradlePlugin)
+    classpath(SqlDelight.Plugin)
     classpath(DetektLib.Plugin)
     classpath(GradleVersions.Plugin)
     classpath(Firebase.CrashlyticsPlugin)
