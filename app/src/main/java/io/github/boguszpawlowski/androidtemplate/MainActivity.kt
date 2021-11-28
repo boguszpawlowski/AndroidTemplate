@@ -1,4 +1,4 @@
-package com.bpawlowski.androidtemplate
+package io.github.boguszpawlowski.androidtemplate
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
